@@ -21,6 +21,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}   
           script: |
             echo "SSH connection successful!"
+          debug: true
 
       - name: Copy files to EC2 via SSH
         uses: appleboy/scp-action@v0.1.7
