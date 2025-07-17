@@ -12,15 +12,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
+
       - name: validate SSH key
         run: |
           if [ -z "$EC2_SSH_KEY" ]; then
-            echo "❌ EC2_SSH_KEY is missing"
+            echo "EC2_SSH_KEY is missing"
             exit 1
           else
-            echo "✅ EC2_SSH_KEY is set"
-          fi
+            echo "EC2_SSH_KEY is set"         
         env:
           EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
 
