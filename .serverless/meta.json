@@ -1,0 +1,100 @@
+{
+  "C:\\ALL_DATA\\OTHERS\\node\\serverless-pg-nest-js\\nest-app\\serverless.yml": {
+    "versionFramework": "4.17.1",
+    "servicePath": "C:\\ALL_DATA\\OTHERS\\node\\serverless-pg-nest-js\\nest-app\\serverless.yml",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "nestjs-serverless-pg",
+      "frameworkVersion": "4.7.1",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs20.x",
+        "architecture": "arm64",
+        "stage": "dev",
+        "region": "ap-south-1",
+        "memorySize": 128,
+        "logRetentionInDays": 1,
+        "timeout": 15,
+        "versionFunctions": true
+      },
+      "functions": {
+        "api": {
+          "handler": "dist/lambda.handler",
+          "events": [
+            {
+              "httpApi": {
+                "method": "any",
+                "path": "/{proxy+}"
+              }
+            }
+          ],
+          "name": "nestjs-serverless-pg-dev-api"
+        }
+      },
+      "plugins": [
+        "serverless-jetpack",
+        "serverless-offline"
+      ]
+    },
+    "provider": {
+      "name": "aws",
+      "runtime": "nodejs20.x",
+      "architecture": "arm64",
+      "stage": "dev",
+      "region": "ap-south-1",
+      "memorySize": 128,
+      "logRetentionInDays": 1,
+      "timeout": 15,
+      "versionFunctions": true
+    },
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "serviceRawFile": "service: nestjs-serverless-pg\n\nframeworkVersion: '4.7.1'\n\nprovider:\n  name: aws\n  runtime: nodejs20.x\n  architecture: arm64\n  stage: ${opt:stage, 'dev'}\n  region: ${opt:region, 'ap-south-1'}\n  memorySize: 128\n  logRetentionInDays: 1\n  timeout: 15\n\nfunctions:\n  api:\n    handler: dist/lambda.handler\n    events:\n      - httpApi:\n          method: any\n          path: /{proxy+}\n\nplugins:\n  - serverless-jetpack\n  - serverless-offline",
+    "command": [
+      "remove"
+    ],
+    "options": {},
+    "orgId": "f46c9068-6037-4d46-8f8c-148b83ec73d4",
+    "orgName": "shashi1088",
+    "userId": "cgDFRqyCsgdjQD6rSs",
+    "userName": "shashi1088",
+    "serviceProviderAwsAccountId": "325910234238",
+    "serviceProviderAwsCfStackName": "nestjs-serverless-pg-dev",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:ap-south-1:325910234238:stack/nestjs-serverless-pg-dev/13869bc0-5360-11f0-8de0-0ac878b087ad",
+    "serviceProviderAwsCfStackCreated": "2025-06-27T14:07:36.541Z",
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "ApiLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:ap-south-1:325910234238:function:nestjs-serverless-pg-dev-api:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-nestjs-serverless-pg-dev-ApiLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "HttpApiId",
+        "OutputValue": "rt7jegqg5g",
+        "Description": "Id of the HTTP API",
+        "ExportName": "sls-nestjs-serverless-pg-dev-HttpApiId"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "serverless-framework-deployments-ap-south-1-e78dc965-a110",
+        "ExportName": "sls-nestjs-serverless-pg-dev-ServerlessDeploymentBucketName"
+      },
+      {
+        "OutputKey": "HttpApiUrl",
+        "OutputValue": "https://rt7jegqg5g.execute-api.ap-south-1.amazonaws.com",
+        "Description": "URL of the HTTP API",
+        "ExportName": "sls-nestjs-serverless-pg-dev-HttpApiUrl"
+      }
+    ]
+  }
+}
