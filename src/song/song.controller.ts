@@ -22,13 +22,6 @@ export class SongController {
   @Get()
   findAll() {
     console.log('findAll called');
-    return [1, 2, 3, 9, 10, 11];
-  }
-
-  @Get(':id')
-  findAll1() {
-    console.log('findA555');
     return this.songService.findAll();
   }
-
 }
