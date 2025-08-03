@@ -33,5 +33,5 @@ services:
     #   - CHOKIDAR_USEPOLLING=true
     #   - NODE_ENV=development
     working_dir: /myapp
-    # volumes:
-    #   - ./src:/myapp/src
+    volumes:
+      - ./src:/myapp/src

@@ -24,4 +24,9 @@ export class SongController {
     console.log('findAll called');
     return this.songService.findAll();
   }
+  @Get("/gg")
+  findAll1() {
+    console.log('findAll called');
+    return "this.songService.findAll()";
+  }
 }
